@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import { connect } from "react-redux";
 
 class App extends Component {
     constructor(props) {
@@ -7,10 +8,16 @@ class App extends Component {
     }
 
     render() {
-        return <h1>Hey</h1>
+        return <h1>Hey {this.props.name}!</h1>
     }
 
 }
 
-export default App;
+const mapStateToProps = (state, ownProps) => { 
+    return {
+        name: state.app.name
+    }
+}
+
+export default connect(mapStateToProps)(App);
 
