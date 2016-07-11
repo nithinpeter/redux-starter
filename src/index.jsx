@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
-import App from "./containers/app";
 import { Provider } from "react-redux";
 import store from "./store";
+import router from "./router";
 
 const appToRender = <Provider store={store}>
-    <App />
+    {router}
 </Provider>
 
 
