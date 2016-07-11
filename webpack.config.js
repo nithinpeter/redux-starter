@@ -34,7 +34,10 @@ const Config = {
         // new CopyWebpackPlugin([
         //     {from: __dirname + '/images', to: __dirname + '/build/images'}
         // ]),
-        new HtmlWebpackPlugin()
+        new HtmlWebpackPlugin({
+            // title: "Title goes here",
+            inject: path.join(__dirname, './src/index.html'),
+        })
     ],
 }
 
